@@ -1,0 +1,11 @@
+{
+  "presets": [
+    "env",
+    "react",
+    "stage-2"
+  ],
+  "plugins": [
+    "jsx-display-if",
+    "babel-plugin-styled-components"
+  ]
+}

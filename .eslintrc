@@ -1,0 +1,33 @@
+{
+  "settings": {
+    "react": {
+      // default to "createReactClass"
+      "pragma": "React",  // Pragma to use, default to "React"
+      "version": "16.6", // React version, default to the latest React stable release
+      "flowVersion": "0.53" // Flow version
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "airbnb-base"
+  ],
+  "env": {
+    "browser": true
+  },
+  "parser": "babel-eslint",
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "no-plusplus": "off",
+    "import/no-unresolved": "off",
+    "class-methods-use-this": "off",
+    "import/no-absolute-path": "off",
+    "no-unused-vars": ["error"],
+    "semi": ["error", "never"],
+    "no-self-assign": ["error", { "props": false }],
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "curly": "error"
+  }
+}
