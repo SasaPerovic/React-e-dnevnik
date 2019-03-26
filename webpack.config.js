@@ -19,6 +19,11 @@ module.exports = {
         use: ['babel-loader', 'eslint-loader']
       },
       {
+        test: /\.js?$/,
+        include: /node_modules/,
+        use: ['react-hot-loader/webpack'],
+      },
+      {
         test: /\.(scss|css)$/,
         use: [
           "style-loader", // creates style nodes from JS strings
