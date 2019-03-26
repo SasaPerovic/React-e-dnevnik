@@ -42,7 +42,10 @@ module.exports = {
     modules: [
       'node_modules',
       path.resolve(__dirname, 'src'),
-    ]
+    ],
+    alias: {
+      "@": __dirname + "/src"
+    }
   },
   output: {
     path: __dirname + '/dist',
