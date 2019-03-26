@@ -4,8 +4,8 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "ENV=development webpack-dev-server --config ./webpack.config.js --mode development",
-    "build": "ENV=production webpack --config ./webpack.config.js --mode production",
+    "start": "cross-env ENV=development webpack-dev-server --config ./webpack.config.js --mode development",
+    "build": "cross-env ENV=production webpack --config ./webpack.config.js --mode production",
     "lint": "eslint --ext .jsx src/**",
     "lint:fix": "eslint client --debug --fix",
     "test": "echo \"No test specified\" && exit 0"
@@ -28,10 +28,13 @@
     "babel-preset-env": "^1.7.0",
     "classnames": "^2.2.6",
     "connected-react-router": "^4.5.0",
+    "cross-env": "^5.2.0",
     "history": "^4.7.2",
     "loaders.css": "^0.1.2",
     "path": "^0.12.7",
     "prop-types": "^15.6.2",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
     "react-helmet": "^5.2.0",
     "react-hot-loader": "^4.3.12",
     "react-loaders": "^3.0.1",
@@ -40,15 +43,13 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-router-redux": "^4.0.8",
+    "react-scripts": "2.1.8",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.5",
     "redux-promise": "^0.6.0",
     "redux-promise-middleware": "^5.1.1",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^4.0.3",
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-scripts": "2.1.8"
+    "styled-components": "^4.0.3"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
