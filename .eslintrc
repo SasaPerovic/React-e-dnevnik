@@ -28,6 +28,7 @@
     "semi": ["error", "never"],
     "no-self-assign": ["error", { "props": false }],
     "no-console": ["warn", { "allow": ["warn", "error"] }],
-    "curly": "error"
+    "curly": "error",
+    "linebreak-style": 0,
   }
 }
