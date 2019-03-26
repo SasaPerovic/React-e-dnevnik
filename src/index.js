@@ -9,12 +9,13 @@ import thunk from 'redux-thunk'
 import promise from 'redux-promise-middleware'
 
 import { routerMiddleware, connectRouter, ConnectedRouter } from 'connected-react-router'
-import createHistory from 'history/createBrowserHistory'
+
+import { createBrowserHistory } from 'history';
+
+const history = createBrowserHistory();
 
 import appReducer from '@/app/reducer'
 import App from '@/app'
-
-const history = createHistory()
 
 const store = createStore(
   connectRouter(history)(appReducer),
