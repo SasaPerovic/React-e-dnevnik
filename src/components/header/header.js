@@ -1,6 +1,12 @@
 /* eslint-disable */
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
+
+import { Link } from "react-router-dom";
+
+import router from '@/const/router'
+import { reformatUrl } from '@/utils/reformat'
+
 import './header.css'
 
 class Header extends Component {
@@ -15,11 +21,9 @@ class Header extends Component {
         <p>slika</p>
 
         <div className="navMeni">
-
-          <a href="google.com">Home</a>
-          <a href="google.com">Login</a>
-          <a href="google.com">Registre</a>
-
+          <Link to={reformatUrl(router.HOME)}>Home</Link>
+          <Link to={reformatUrl(router.LOGIN)}>Login</Link>
+          <Link to={reformatUrl(router.REGISTER)}>Register</Link>
         </div>
       </div>
     )

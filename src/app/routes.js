@@ -1,6 +1,25 @@
-import { Redirect, Route, Switch } from 'react-router'
-import React from 'react'
+/* eslint-disable */
 
+import React from 'react'
+import { Redirect, Route, Switch } from 'react-router'
+import routes from '@/const/router'
+
+import { reformatUrl } from '@/utils/reformat'
+import PrivateRouter from '@/components/privateRouter'
+
+import LoginForm from '@/scenes/loginForm'
+
+function Home() {
+  return (
+    <h1>home</h1>
+  )
+}
+
+function PageNotFound() {
+  return (
+    <h1>not found</h1>
+  )
+}
 
 const attachRoutes = () => (
   <Switch>
@@ -8,33 +27,27 @@ const attachRoutes = () => (
       exact
       path="/"
       render={() => (
-        <Redirect to={reformatUrl(routers.HOME)}/>
+        <Redirect to={reformatUrl(routes.HOME)}/>
       )}
+    />
+
+    <PrivateRouter
+      // currentUser={currentUser}
+      path={reformatUrl(routes.HOME)}
+      RouteComponent={Home}
     />
 
     <Route
       exact
-      path={reformatUrl(routers.HOME)}
-      component={Home}
+      path={reformatUrl(routes.LOGIN)}
+      component={LoginForm}
     />
 
     <Route
-      path={reformatUrl(routers.REGISTRE)}
-      component={Registre}
-    />
-    <Route
-      path={reformatUrl(routers.TEACHER)}
-      component={Teacher}
-    />
-    <Route
-      path={reformatUrl(routers.STUDENT)}
-      component={Student}
-    />
-    <Route
-      path={reformatUrl(routers.PERENT)}
-      component={Perent}
+      path="*"
+      component={PageNotFound}
     />
   </Switch>
 )
 
-export default attachRoutes;
+export default attachRoutes
