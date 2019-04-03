@@ -1,0 +1,13 @@
+.conteiner{
+  display: grid;
+  grid-template-rows:1fr 3fr 1fr ;
+}
+.header{
+  grid-row: 1;
+}
+.content{
+  grid-row: 2;
+}
+.footer{
+  grid-row: 3;
+}
