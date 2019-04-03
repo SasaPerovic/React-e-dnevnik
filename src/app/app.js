@@ -1,6 +1,6 @@
 /* eslint-disable */
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React, {Component, Fragment} from 'react'
 
 import Header from '@/components/header'
 import Footer from '@/components/footer'
@@ -15,12 +15,14 @@ class App extends Component {
 
   render() {
     return (
-      <section className="conteiner">
+      <Fragment>
+        <section className="conteiner">
           <Header className="header" />
           <Content className="content"/>
           <Login/>
-          <Footer className="footer"/>
-      </section>
+        </section>
+        <Footer className="footer"/>
+      </Fragment>
     )
   }
 }

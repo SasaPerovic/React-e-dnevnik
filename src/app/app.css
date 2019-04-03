@@ -1,13 +1,12 @@
-.conteiner{
-  display: grid;
-  grid-template-rows:1fr 3fr 1fr ;
+html,
+body {
+  height: 100%;
+  margin: 0;
 }
-.header{
-  grid-row: 1;
-}
-.content{
-  grid-row: 2;
-}
-.footer{
-  grid-row: 3;
+
+.react-app {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
 }
