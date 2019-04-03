@@ -3,8 +3,8 @@ import axios from 'axios'
 
 const apiUrlConstructor = ({ base = null }) => {
   let fullUrl
-  // const url = 'http://dnevnik.dexdev.org/api/'
-  const url = 'http://127.0.0.1:8000/api/'
+  const url = 'http://dnevnik.dexdev.org/api/'
+  // const url = 'http://127.0.0.1:8000/api/'
 
   // Make sure the base is actually a valid element
   if (base) {
