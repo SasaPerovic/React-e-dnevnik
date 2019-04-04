@@ -3,23 +3,58 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 
 class Login extends Component {
-  constructor () {
-    super()
+
+  state = {
+    email: 'sasans87@gmail.com',
+    password: 'admin',
+  }
+
+  onFieldChange = (e) => {
+    const { value, name } = e.target
+    this.setState({
+      [name]: value
+    })
+  }
+
+  login = () => {
+    const { loginUser } = this.props
+    loginUser(this.state).then((data) => {
+      console.warn('data', data)
+    }).catch((e) => {
+      console.warn('greska', e.response.data.error)
+    })
   }
 
   render() {
+    const { email, password } = this.state
     return (
       <section className="login-form">
 
         <div className="form-item">
           <label htmlFor="username">Username:</label>
-          <input id="username" type="text" name="username"  placeholder="username"/><br/>
+          <input
+            value={email}
+            id="username"
+            type="text"
+            name="email"
+            placeholder="username"
+            onChange={this.onFieldChange}
+          />
         </div>
 
         <div className="form-item">
           <label htmlFor="password">Password:</label>
-          <input id="password" type="password" name="password" placeholder="password"/>
+          <input
+            value={password}
+            id="password"
+            type="password"
+            name="password"
+            placeholder="password"
+            onChange={this.onFieldChange}
+          />
         </div>
+
+        <button onClick={this.login}>Login</button>
 
       </section>
     )
@@ -27,7 +62,7 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-
+  loginUser: PropTypes.func,
 }
 
 Login.defaultProps = {

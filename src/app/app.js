@@ -7,8 +7,6 @@ import Footer from '@/components/footer'
 
 import attachRoutes from '@/app/routes'
 
-import { apiPost } from '@/services/api'
-
 import './app.css'
 
 class App extends Component {
@@ -16,23 +14,14 @@ class App extends Component {
     super()
   }
 
-  componentDidMount() {
-    apiPost('login', {
-      email: 'sasans87@gmail.com',
-      password: 'admin',
-    }).then((respond) => {
-      console.warn('user', respond)
-    })
-  }
-
-
   render() {
+    const { user } = this.props
     return (
       <Fragment>
         <section className="conteiner">
           <Header className="header" />
           <main>
-            { attachRoutes() }
+            { attachRoutes(user) }
           </main>
         </section>
         <Footer className="footer"/>
@@ -42,7 +31,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-
+  user: PropTypes.object,
 }
 
 App.defaultProps = {

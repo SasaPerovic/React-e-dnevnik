@@ -6,7 +6,7 @@ import routes from '@/const/router'
 
 import { reformatUrl } from '@/utils/reformat'
 import PrivateRouter from '@/components/privateRouter'
-
+import PublicRouter from '@/components/publicRouter'
 import LoginForm from '@/scenes/loginForm'
 
 function Home() {
@@ -21,7 +21,7 @@ function PageNotFound() {
   )
 }
 
-const attachRoutes = () => (
+const attachRoutes = (user) => (
   <Switch>
     <Route
       exact
@@ -32,15 +32,15 @@ const attachRoutes = () => (
     />
 
     <PrivateRouter
-      // currentUser={currentUser}
+      currentUser={user}
       path={reformatUrl(routes.HOME)}
       RouteComponent={Home}
     />
 
-    <Route
-      exact
+    <PublicRouter
+      currentUser={user}
       path={reformatUrl(routes.LOGIN)}
-      component={LoginForm}
+      RouteComponent={LoginForm}
     />
 
     <Route
