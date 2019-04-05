@@ -1,11 +1,12 @@
-/* eslint-disable */
-import { apiPost } from '@/services/api'
+import { apiGet, apiPost } from '@/services/api'
 
 import { actionType } from '@/store/actionType'
+import { saveAuthCookie } from '@/utils/util'
 
-export const loginUser = (variable) => dispatch => new Promise((resolve, reject) => {
-
+export const loginUser = variable => dispatch => new Promise((resolve, reject) => {
   apiPost('login', variable).then((data) => {
+    const { token } = data.data
+    saveAuthCookie({ token })
     resolve(data)
     dispatch({
       type: `${actionType.LOGIN}_FULFILLED`,
@@ -19,9 +20,15 @@ export const loginUser = (variable) => dispatch => new Promise((resolve, reject)
     dispatch({
       type: `${actionType.LOGIN}_REJECTED`,
       payload: {
-        error: error.response.data.error
+        error: error.response.data.error,
       },
     })
   })
-
 })
+
+export const getUser = () => (dispatch) => {
+  dispatch({
+    type: `${actionType.GET_USER}`,
+    payload: apiGet('user'),
+  })
+}

@@ -4,7 +4,7 @@ import React, {Component, Fragment} from 'react'
 
 import Header from '@/components/header'
 import Footer from '@/components/footer'
-
+import { hasAuthCookie } from '@/utils/util'
 import attachRoutes from '@/app/routes'
 
 import './app.css'
@@ -12,6 +12,14 @@ import './app.css'
 class App extends Component {
   constructor () {
     super()
+  }
+
+  componentDidMount() {
+    const { getUser } = this.props
+    if (hasAuthCookie()) {
+      // @TODO remove cookie on exeption
+      getUser()
+    }
   }
 
   render() {
@@ -32,6 +40,7 @@ class App extends Component {
 
 App.propTypes = {
   user: PropTypes.object,
+  getUser: PropTypes.func,
 }
 
 App.defaultProps = {

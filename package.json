@@ -30,7 +30,10 @@
     "connected-react-router": "^4.5.0",
     "cross-env": "^5.2.0",
     "history": "^4.9.0",
+    "jwt-decode": "^2.2.0",
     "loaders.css": "^0.1.2",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
     "path": "^0.12.7",
     "prop-types": "^15.7.2",
     "react": "^16.8.5",
@@ -49,7 +52,8 @@
     "redux-promise": "^0.6.0",
     "redux-promise-middleware": "^5.1.1",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.2.0",
+    "universal-cookie": "^3.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

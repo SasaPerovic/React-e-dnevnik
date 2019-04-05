@@ -1,10 +1,10 @@
 /* eslint-disable */
 import axios from 'axios'
+import { getBrowserCookie } from '@/utils/util'
 
 const apiUrlConstructor = ({ base = null }) => {
   let fullUrl
   const url = 'http://dnevnik.dexdev.org/api/'
-  // const url = 'http://127.0.0.1:8000/api/'
 
   // Make sure the base is actually a valid element
   if (base) {
@@ -27,6 +27,7 @@ export function apiGet(urlParameters, headers = { 'Access-Control-Allow-Origin':
   if (headers && Object.keys(headers).length) {
     axiosConfig = { headers }
   }
+  axios.defaults.headers.common = {'Authorization': getBrowserCookie()}
   return axios.get(apiUrlConstructor({ base: urlParameters }), axiosConfig)
 }
 
