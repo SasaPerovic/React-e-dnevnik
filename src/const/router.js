@@ -3,4 +3,5 @@ export default {
   HOME: 'home',
   LOGIN: 'login',
   REGISTER: 'register',
+  LOGOUT: 'logout',
 }

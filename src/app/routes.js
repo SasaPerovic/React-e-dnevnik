@@ -8,7 +8,7 @@ import { reformatUrl } from '@/utils/reformat'
 import PrivateRouter from '@/components/privateRouter'
 import PublicRouter from '@/components/publicRouter'
 import LoginForm from '@/scenes/loginForm'
-
+import LogOut from '@/scenes/logOut'
 function Home() {
   return (
     <h1>home</h1>
@@ -41,6 +41,12 @@ const attachRoutes = (user) => (
       currentUser={user}
       path={reformatUrl(routes.LOGIN)}
       RouteComponent={LoginForm}
+    />
+
+    <PrivateRouter
+      currentUser={user}
+      path={reformatUrl(routes.LOGOUT)}
+      RouteComponent={LogOut}
     />
 
     <Route

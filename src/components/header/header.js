@@ -15,6 +15,8 @@ class Header extends Component {
   }
 
   render() {
+    // console.log(this.props.user)
+    const {user}=this.props
     return (
       <div className="meni">
         <h1 className="naslov">E-Dnevnik</h1>
@@ -24,6 +26,10 @@ class Header extends Component {
           <Link to={reformatUrl(router.HOME)}>Home</Link>
           <Link display-if={!this.props.user} to={reformatUrl(router.LOGIN)}>Login</Link>
           <Link to={reformatUrl(router.REGISTER)}>Register</Link>
+        </div>
+        <div display-if={user}>
+          <p>{user.firstName} {user.lastName}</p>
+          <Link display-if={this.props.user} to={router.LOGOUT}>Log Out </Link>
         </div>
       </div>
     )
