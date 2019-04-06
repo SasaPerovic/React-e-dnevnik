@@ -27,7 +27,10 @@ class App extends Component {
     return (
       <Fragment>
         <section className="conteiner">
-          <Header className="header" />
+          <Header
+            className="header"
+            user={user}
+          />
           <main>
             { attachRoutes(user) }
           </main>

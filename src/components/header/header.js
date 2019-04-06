@@ -22,7 +22,7 @@ class Header extends Component {
 
         <div className="navMeni">
           <Link to={reformatUrl(router.HOME)}>Home</Link>
-          <Link to={reformatUrl(router.LOGIN)}>Login</Link>
+          <Link display-if={!this.props.user} to={reformatUrl(router.LOGIN)}>Login</Link>
           <Link to={reformatUrl(router.REGISTER)}>Register</Link>
         </div>
       </div>
@@ -31,7 +31,7 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-
+  user: PropTypes.object,
 }
 
 Header.defaultProps = {
