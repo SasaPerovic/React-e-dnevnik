@@ -28,6 +28,12 @@ export default function reducer(state = initalState, action) {
         },
       }
     }
+    case actionType.LOGOUT_USER: {
+      return {
+        ...state,
+        user: null,
+      }
+    }
     default: {
       return state
     }

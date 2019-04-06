@@ -1,4 +1,3 @@
-// import axios from 'axios'
 import Cookies from 'universal-cookie'
 import jwtDecode from 'jwt-decode'
 import moment from 'moment'
@@ -27,16 +26,6 @@ export function hasAuthCookie() {
   )
 }
 
-// @TODO remove this
-// export function setAuthHeader() {
-//   if (hasAuthCookie()) {
-//     axios.defaults.headers.common[config.AUTH_HEADER] = getBrowserCookie()
-//     axios.defaults.headers['Access-Control-Allow-Origin'] = axios.defaults.baseURL
-//     return true
-//   }
-//   return false
-// }
-
 // Kreira token cookie
 export const saveAuthCookie = ({ token }) => {
   const AUTH_TOKEN = ''.concat('bearer', ' ', token)
@@ -47,4 +36,8 @@ export const saveAuthCookie = ({ token }) => {
   }
   cookieObject().set(config.COOKIE_NAME.AUTH, AUTH_TOKEN, options)
   // setAuthHeader()
+}
+
+export const removeAuthCookie = () => {
+  cookieObject().remove(config.COOKIE_NAME.AUTH)
 }

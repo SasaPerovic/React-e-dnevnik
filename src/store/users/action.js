@@ -1,7 +1,7 @@
 import { apiGet, apiPost } from '@/services/api'
 
 import { actionType } from '@/store/actionType'
-import { saveAuthCookie } from '@/utils/util'
+import { saveAuthCookie, removeAuthCookie } from '@/utils/util'
 
 export const loginUser = variable => dispatch => new Promise((resolve, reject) => {
   apiPost('login', variable).then((data) => {
@@ -30,5 +30,13 @@ export const getUser = () => (dispatch) => {
   dispatch({
     type: `${actionType.GET_USER}`,
     payload: apiGet('user'),
+  })
+}
+
+export const logOutUser = () => (dispatch) => {
+  removeAuthCookie()
+  dispatch({
+    type: actionType.LOGOUT_USER,
+    payload: [],
   })
 }

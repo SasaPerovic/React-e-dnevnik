@@ -1,9 +1,7 @@
-/* eslint-disable */
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 
 class Login extends Component {
-
   state = {
     email: 'sasans87@gmail.com',
     password: 'admin',
@@ -12,17 +10,13 @@ class Login extends Component {
   onFieldChange = (e) => {
     const { value, name } = e.target
     this.setState({
-      [name]: value
+      [name]: value,
     })
   }
 
   login = () => {
     const { loginUser } = this.props
-    loginUser(this.state).then((data) => {
-      console.warn('data', data)
-    }).catch((e) => {
-      console.warn('greska', e.response.data.error)
-    })
+    loginUser(this.state)
   }
 
   render() {
