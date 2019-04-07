@@ -1,29 +1,17 @@
-/* eslint-disable */
-import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import './footer.css'
+import './footer.scss'
 
 class Footer extends Component {
-  constructor () {
-    super()
-  }
-
   render() {
     return (
-     <div className="footerMeni">
-       <h4>e-dnevnik</h4>
-       <h4>made by sasans87@gmail</h4>
-     </div>
+      <footer className="page-footer">
+        <div className="page-holder flex">
+          <h4>E-dnevnik</h4>
+          <h4>&nbsp; made by sasans87@gmail</h4>
+        </div>
+      </footer>
     )
   }
-}
-
-Footer.propTypes = {
-
-}
-
-Footer.defaultProps = {
-
 }
 
 export default Footer

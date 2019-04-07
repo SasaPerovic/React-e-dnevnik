@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+a {
+
+}
+
+.react-app {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.page-holder {
+  padding: 0 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.page-main {
+  height: 100%;
+
+  > .page-holder {
+    height: 100%;
+  }
+}
+
+// global form
+.form-item {
+  margin: 14px 0;
+  label {
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  input {
+    width: 100%;
+    padding: 4px 6px;
+    border: 1px solid #b4b4b4;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  }
+}
+
+button {
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #fff !important;
+  background: #60a3bc;
+  padding: 8px 14px;
+  border-radius: 4px;
+  display: inline-block;
+  border: none;
+
+  &:hover {
+    text-shadow: 0 0 6px rgba(255, 255, 255, 1);
+    box-shadow: 0 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.4s ease 0s;
+  }
+}

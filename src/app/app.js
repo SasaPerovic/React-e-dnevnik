@@ -7,7 +7,7 @@ import Footer from '@/components/footer'
 import { hasAuthCookie } from '@/utils/util'
 import attachRoutes from '@/app/routes'
 
-import './app.css'
+import './app.scss'
 
 class App extends Component {
   constructor () {
@@ -26,13 +26,15 @@ class App extends Component {
     const { user } = this.props
     return (
       <Fragment>
-        <section className="conteiner">
+        <section className="conteiner page">
           <Header
             className="header"
             user={user}
           />
-          <main>
-            { attachRoutes(user) }
+          <main className="page-main">
+            <div className="page-holder">
+              { attachRoutes(user) }
+            </div>
           </main>
         </section>
         <Footer className="footer"/>

@@ -1,0 +1,47 @@
+.main-header {
+  padding: 5px 0;
+  background-color: #3370bf;
+  margin: unset;
+
+  .page-holder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  a {
+    color: #fff;
+  }
+}
+
+.main-nav {
+  display: flex;
+
+  a {
+    display: block;
+    padding: 8px 12px;
+    color: aliceblue;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    margin: 0 2px;
+    text-transform: uppercase;
+
+    &.active {
+      border-bottom-color: #75A2D7;
+    }
+  }
+}
+
+.title {
+  margin: unset;
+  color: black;
+}
+
+.user-info {
+  display: flex;
+
+  p {
+    margin: 0 10px 0 0;
+    color: #fff;
+  }
+}
