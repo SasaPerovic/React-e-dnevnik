@@ -9,6 +9,7 @@ import PrivateRouter from '@/components/privateRouter'
 import PublicRouter from '@/components/publicRouter'
 import LoginForm from '@/scenes/loginForm'
 import LogOut from '@/scenes/logOut'
+import Register from '@/scenes/register'
 function Home() {
   return (
     <h1>home</h1>
@@ -47,6 +48,12 @@ const attachRoutes = (user) => (
       currentUser={user}
       path={reformatUrl(routes.LOGOUT)}
       RouteComponent={LogOut}
+    />
+
+    <PrivateRouter
+      currentUser={user}
+      path={reformatUrl(routes.REGISTER)}
+      RouteComponent={Register}
     />
 
     <Route

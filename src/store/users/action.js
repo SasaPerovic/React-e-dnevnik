@@ -26,6 +26,14 @@ export const loginUser = variable => dispatch => new Promise((resolve, reject) =
   })
 })
 
+export const registerUser = variable => new Promise((resolve, reject) => {
+  apiPost('register', variable).then((data) => {
+    resolve(data)
+  }).catch((error) => {
+    reject(error)
+  })
+})
+
 export const getUser = () => (dispatch) => {
   dispatch({
     type: `${actionType.GET_USER}`,
