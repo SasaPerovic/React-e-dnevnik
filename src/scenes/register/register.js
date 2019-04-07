@@ -64,12 +64,22 @@ class Register extends Component {
             <input
               value={password_confirmation}
               id="password_confirmation"
-              type="password_confirmation"
+              type="password"
               name="password_confirmation"
               placeholder="password confirmation"
               onChange={this.onFieldChange}
             />
           </div>
+          <div className="form-item">
+            <label htmlFor="role">role:</label>
+            <select name="role" onChange={this.onFieldChange}>
+              <option value="admin">Admin</option>
+              <option value="student">Student</option>
+              <option value="teacher">Teacher</option>
+              <option value="parent">Parent</option>
+            </select>
+          </div>
+          <button onClick={this.register}>Submit</button>
         </div>
       </section>
     )
