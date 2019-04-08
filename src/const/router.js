@@ -4,4 +4,5 @@ export default {
   LOGIN: 'login',
   REGISTER: 'register',
   LOGOUT: 'logout',
+  INFO_USER: 'info-user',
 }

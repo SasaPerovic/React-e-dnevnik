@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  border-radius: 5px
 }
 
 html,
@@ -47,6 +48,8 @@ a {
   label {
     display: block;
     margin-bottom: 4px;
+    color: #130076;
+    font-family: Roboto;
 
   }
 

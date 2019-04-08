@@ -20,13 +20,14 @@ class Header extends Component {
             <NavLink to={reformatUrl(router.HOME)}>Home</NavLink>
             <NavLink display-if={!this.props.user} to={reformatUrl(router.LOGIN)}>Login</NavLink>
             <NavLink to={reformatUrl(router.REGISTER)}>Register</NavLink>
+            <NavLink to={reformatUrl(router.INFO_USER)}>Info aboat user</NavLink>
           </nav>
-
-          <div className="user-info" display-if={user}>
-            <p>{user.firstName} {user.lastName}</p>
-            <Link display-if={this.props.user} to={router.LOGOUT}>Log Out </Link>
+          <div>
+            <div className="user-info" display-if={user}>
+              <p>{user.firstName} {user.lastName}</p>
+              <Link display-if={this.props.user} to={router.LOGOUT}>Log Out </Link>
+            </div>
           </div>
-
         </div>
       </header>
     )
