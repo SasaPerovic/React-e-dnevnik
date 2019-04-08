@@ -16,7 +16,7 @@ export const loginUser = variable => dispatch => new Promise((resolve, reject) =
       },
     })
   }).catch((error) => {
-    reject(error)
+    reject(error.response)
     dispatch({
       type: `${actionType.LOGIN}_REJECTED`,
       payload: {
@@ -26,11 +26,19 @@ export const loginUser = variable => dispatch => new Promise((resolve, reject) =
   })
 })
 
-export const registerUser = variable => new Promise((resolve, reject) => {
+export const registerUser = variable => dispatch => new Promise((resolve, reject) => {
   apiPost('register', variable).then((data) => {
     resolve(data)
+    dispatch({
+      type: `${actionType.REGISTER_USER}_FULFILLED`,
+      payload: data,
+    })
   }).catch((error) => {
-    reject(error)
+    reject(error.response)
+    dispatch({
+      type: `${actionType.REGISTER_USER}_REJECTED`,
+      payload: error.response,
+    })
   })
 })
 
