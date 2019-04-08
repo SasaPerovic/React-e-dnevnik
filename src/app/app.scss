@@ -47,6 +47,7 @@ a {
   label {
     display: block;
     margin-bottom: 4px;
+
   }
 
   input {
@@ -54,6 +55,7 @@ a {
     padding: 4px 6px;
     border: 1px solid #b4b4b4;
     box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    border-radius: 10px;
   }
 }
 
@@ -61,7 +63,7 @@ button {
   text-transform: uppercase;
   cursor: pointer;
   color: #fff !important;
-  background: #60a3bc;
+  background: #3370bf;
   padding: 8px 14px;
   border-radius: 4px;
   display: inline-block;

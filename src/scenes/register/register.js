@@ -18,14 +18,16 @@ class Register extends Component {
   }
   register = () => {
     const { registerUser } = this.props
-    registerUser(this.state)
+    registerUser(this.state).catch((error => {
+      console.warn('eror: ', error)
+    }))
   }
 
   render() {
     const { name, email, password, password_confirmation, role} = this.state
     return (
-      <section className="register-form">
-        <div>
+      <section className="login-form">
+        <div className="login-inner">
           <div className="form-item">
             <label htmlFor="name">Name:</label>
             <input
