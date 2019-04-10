@@ -11,6 +11,7 @@ import LoginForm from '@/scenes/loginForm'
 import LogOut from '@/scenes/logOut'
 import Register from '@/scenes/register'
 import InfoUser from '@/scenes/infoUser'
+import Teach from '@/scenes/teach'
 function Home() {
   return (
     <h1>home</h1>
@@ -61,6 +62,11 @@ const attachRoutes = (user) => (
       currentUser={user}
       path={reformatUrl(routes.INFO_USER)}
       RouteComponent={InfoUser}
+    />
+    <PrivateRouter
+      currentUser={user}
+      path={reformatUrl(routes.TEACH)}
+      RouteComponent={Teach}
     />
 
     <Route

@@ -5,4 +5,5 @@ export default {
   REGISTER: 'register',
   LOGOUT: 'logout',
   INFO_USER: 'info-user',
+  TEACH: 'teach',
 }
