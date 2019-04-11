@@ -2,14 +2,17 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 
+const initState = {
+  name: "",
+  email: "",
+  password: "",
+  password_confirmation: "",
+  role: "admin",
+}
+
 class Register extends Component {
-  state = {
-    name: "",
-    email: "",
-    password: "",
-    password_confirmation: "",
-    role: "",
-  }
+  state = initState
+
   onFieldChange = (e) => {
     const { value, name } = e.target
     this.setState({
@@ -18,9 +21,11 @@ class Register extends Component {
   }
   register = () => {
     const { registerUser } = this.props
-    registerUser(this.state).catch((error => {
-      console.warn('eror: ', error)
-    }))
+    registerUser(this.state).then(() => {
+      this.setState({
+        ...initState,
+      })
+    })
   }
 
   render() {
@@ -74,7 +79,7 @@ class Register extends Component {
           </div>
           <div className="form-item">
             <label htmlFor="role">role:</label>
-            <select name="role" onChange={this.onFieldChange}>
+            <select defaultValue={role} name="role" onChange={this.onFieldChange}>
               <option value="admin">Admin</option>
               <option value="student">Student</option>
               <option value="teacher">Teacher</option>

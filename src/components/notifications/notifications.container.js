@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { connect } from 'react-redux'
 
 import { clearNotification } from '@/store/notification/action'
