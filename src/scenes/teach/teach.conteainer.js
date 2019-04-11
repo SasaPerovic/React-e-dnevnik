@@ -1,12 +1,17 @@
 import { connect } from 'react-redux'
 
 import teach from './teach'
+import { getSubject } from '@/store/subject/action'
 
 const mapStateToProps = (state) => {
-  const { user } = state.store.users
+  const { subject } = state.store.dnevnik
   return {
-    user,
+    subject,
   }
 }
 
-export default connect(mapStateToProps, null)(teach)
+const matchDispatchToProps = {
+  getSubject,
+}
+
+export default connect(mapStateToProps, matchDispatchToProps)(teach)

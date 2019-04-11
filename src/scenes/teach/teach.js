@@ -1,19 +1,35 @@
 /* eslint-disable */
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
+
 
 class Teach extends Component {
+  componentDidMount() {
+    const { getSubject } = this.props
+    getSubject()
+  }
+
+  renderSubject() {
+    const { subject } = this.props
+
+    return subject.map((item, index) => {
+      return (
+        <div key={index}>
+          <ul>
+            <li>{item.firstName}</li>
+            <li>{item.lastName}</li>
+            <li>{item.name}</li>
+          </ul>
+        </div>
+      )
+    })
+  }
+
   render() {
-    console.log(this.props)
-    const { user } = this.props
       return (
         <section>
           <div>
-            <ul>
-              <li>Subject name: {user.name}</li>
-              <li>First name: {user.firstName}</li>
-              <li>Last name: {user.lastName}</li>
-            </ul>
+            { this.renderSubject() }
           </div>
         </section>
       )
@@ -21,7 +37,8 @@ class Teach extends Component {
 }
 
 Teach.propTypes = {
-  user: PropTypes.object,
+  subject: PropTypes.array,
+  getSubject: PropTypes.func,
 }
 
 Teach.defaultProps = {
@@ -29,3 +46,4 @@ Teach.defaultProps = {
 }
 
 export default Teach
+

@@ -8,4 +8,5 @@ export const actionType = {
   GET_USER: 'GET_USER',
   LOGOUT_USER: 'LOGOUT',
   REGISTER_USER: 'REGISTER',
+  GET_SUBJECT: 'SUBJECT',
 }
