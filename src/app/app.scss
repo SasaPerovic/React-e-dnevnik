@@ -31,15 +31,11 @@ a {
 .page {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  //height: 100%;
 }
 
 .page-main {
-  height: 100%;
-
-  > .page-holder {
-    height: 100%;
-  }
+  padding: 25px 0;
 }
 
 // global form
