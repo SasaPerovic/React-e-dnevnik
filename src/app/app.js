@@ -6,6 +6,7 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 import { hasAuthCookie } from '@/utils/util'
 import attachRoutes from '@/app/routes'
+import Notifications from '@/components/notifications'
 
 import './app.scss'
 
@@ -38,6 +39,7 @@ class App extends Component {
           </main>
         </section>
         <Footer className="footer"/>
+        <Notifications />
       </Fragment>
     )
   }

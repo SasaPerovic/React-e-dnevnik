@@ -34,6 +34,10 @@ module.exports = {
       {
         test: /\.(png|jpe?g|gif|ico|svg)$/,
         use: 'file-loader?name=assets/images/[name].[hash].[ext]',
+      },
+      {
+        test: /\.(ttf|eot|svg|woff(2)?)(\S+)?$/,
+        loader: 'file-loader?publicPath=/&name=fonts/[name].[ext]'
       }
     ]
   },

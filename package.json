@@ -41,6 +41,7 @@
     "react-helmet": "^5.2.0",
     "react-hot-loader": "^4.8.0",
     "react-loaders": "^3.0.1",
+    "react-notifications": "^1.4.3",
     "react-redux": "^5.1.0",
     "react-render-html": "^0.6.0",
     "react-router": "^4.3.1",
