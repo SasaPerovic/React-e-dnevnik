@@ -6,4 +6,5 @@ export default {
   LOGOUT: 'logout',
   INFO_USER: 'info-user',
   TEACH: 'teach',
+  USERS_LIST: 'users-list',
 }

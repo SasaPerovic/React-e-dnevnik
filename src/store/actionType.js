@@ -6,6 +6,7 @@
 export const actionType = {
   LOGIN: 'LOGIN',
   GET_USER: 'GET_USER',
+  GET_USERS: 'GET_USERS',
   LOGOUT_USER: 'LOGOUT',
   REGISTER_USER: 'REGISTER',
   GET_SUBJECT: 'SUBJECT',

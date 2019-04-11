@@ -13,10 +13,6 @@ class InfoUser extends Component {
             <li>Last name: {user.lastName} </li>
             <li>email: {user.email} </li>
             <li>Role: {user.role} </li>
-            <li>Address: {user.address} </li>
-            <li>Number: {user.number} </li>
-            <li>Birthday: {user.birthday} </li>
-
           </ul>
        </div>
      </section>

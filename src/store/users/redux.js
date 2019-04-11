@@ -2,6 +2,7 @@ import { actionType } from '@/store/actionType'
 
 const initalState = {
   user: null,
+  users: [],
 }
 
 export default function reducer(state = initalState, action) {
@@ -11,6 +12,13 @@ export default function reducer(state = initalState, action) {
       return {
         ...state,
         user,
+      }
+    }
+    case `${actionType.GET_USERS}_FULFILLED`: {
+      const { data } = action.payload
+      return {
+        ...state,
+        users: data,
       }
     }
     case `${actionType.LOGIN}_FULFILLED`: {

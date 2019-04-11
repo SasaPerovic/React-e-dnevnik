@@ -70,6 +70,12 @@ export const getUser = () => (dispatch) => {
     payload: apiGet('user'),
   })
 }
+export const getUsers = () => (dispatch) => {
+  dispatch({
+    type: `${actionType.GET_USERS}`,
+    payload: apiGet('users'),
+  })
+}
 
 export const logOutUser = () => (dispatch) => {
   removeAuthCookie()

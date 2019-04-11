@@ -12,6 +12,7 @@ import LogOut from '@/scenes/logOut'
 import Register from '@/scenes/register'
 import InfoUser from '@/scenes/infoUser'
 import Teach from '@/scenes/teach'
+import UsersList from '@/scenes/userLlist'
 function Home() {
   return (
     <h1>home</h1>
@@ -62,6 +63,11 @@ const attachRoutes = (user) => (
       currentUser={user}
       path={reformatUrl(routes.INFO_USER)}
       RouteComponent={InfoUser}
+    />
+    <PrivateRouter
+      currentUser={user}
+      path={reformatUrl(routes.USERS_LIST)}
+      RouteComponent={UsersList}
     />
     <PrivateRouter
       currentUser={user}

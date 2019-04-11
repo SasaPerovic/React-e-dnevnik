@@ -21,6 +21,7 @@ class Header extends Component {
             <NavLink to={reformatUrl(router.REGISTER)}>Register</NavLink>
             <NavLink to={reformatUrl(router.INFO_USER)}>Profile</NavLink>
             <NavLink to={reformatUrl(router.TEACH)}>Subject</NavLink>
+            <NavLink to={reformatUrl(router.USERS_LIST)}>List</NavLink>
           </nav>
           <div>
             <div className="user-info" display-if={user}>
