@@ -17,8 +17,13 @@ class Login extends Component {
   }
 
   login = () => {
-    const { loginUser } = this.props
-    loginUser(this.state)
+    const { loginUser, showNotification } = this.props
+    loginUser(this.state).catch((error) => {
+      showNotification({
+        type: 'error',
+        message: error.data.error,
+      })
+    })
   }
 
   render() {
@@ -59,6 +64,7 @@ class Login extends Component {
 
 Login.propTypes = {
   loginUser: PropTypes.func,
+  showNotification: PropTypes.func,
 }
 
 Login.defaultProps = {
