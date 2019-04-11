@@ -12,12 +12,14 @@ class UsersList extends Component {
 
     return users.map((item, index) => {
       return (
-        <div key={index}>
-          <ul>
+        <div className="list" key={index}>
+          <ul className="list-ul">
             <li>{item.firstName}</li>
             <li>{item.lastName}</li>
             <li>{item.email}</li>
             <li>{item.role}</li>
+            <li><button>Delite</button></li>
+            <li><button>Updata</button></li>
           </ul>
         </div>
       )

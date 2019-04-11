@@ -1,6 +1,7 @@
 /* eslint-disable */
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
+import './userList.scss'
 
 class InfoUser extends Component {
   render() {
@@ -8,7 +9,7 @@ class InfoUser extends Component {
     return (
      <section>
        <div className="list">
-          <ul className="list ul" >
+          <ul className="list-ul" >
             <li>First name: {user.firstName} </li>
             <li>Last name: {user.lastName} </li>
             <li>email: {user.email} </li>

@@ -15,8 +15,8 @@ class Teach extends Component {
 
     return subject.map((item, index) => {
       return (
-        <div key={index}>
-          <ul>
+        <div className="list"  key={index}>
+          <ul className="list-ul">
             <li>{item.firstName}</li>
             <li>{item.lastName}</li>
             <li>{item.name}</li>
