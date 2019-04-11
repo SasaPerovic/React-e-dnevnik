@@ -5,7 +5,7 @@ import { NavLink, Link } from 'react-router-dom'
 
 import router from '@/const/router'
 import { reformatUrl } from '@/utils/reformat'
-
+import Logo from '@/components/logo'
 import './header.scss'
 
 class Header extends Component {
@@ -14,8 +14,7 @@ class Header extends Component {
     return (
       <header className="main-header">
         <div className="page-holder">
-          <h1 className="title">E-Dnevnik</h1>
-
+          <Logo header />
           <nav className="main-nav">
             <NavLink to={reformatUrl(router.HOME)}>Home</NavLink>
             <NavLink display-if={!this.props.user} to={reformatUrl(router.LOGIN)}>Login</NavLink>
