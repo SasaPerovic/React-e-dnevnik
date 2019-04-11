@@ -6,5 +6,6 @@ export default {
   LOGOUT: 'logout',
   INFO_USER: 'info-user',
   TEACH: 'teach',
+  STUDENT_LISTEN: 'studentslusa',
   USERS_LIST: 'users-list',
 }

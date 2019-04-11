@@ -3,6 +3,7 @@ import { actionType } from '@/store/actionType'
 
 const initalState = {
   subject: [],
+  listen: [],
 }
 
 export default function reducer(state = initalState, action){
@@ -12,6 +13,13 @@ export default function reducer(state = initalState, action){
       return {
         ...state,
         subject: data,
+      }
+    }
+    case `${actionType.GET_LISTEN}_FULFILLED`: {
+      const { data } = action.payload
+      return {
+        ...state,
+        listen: data,
       }
     }
     default: {

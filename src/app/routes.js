@@ -13,6 +13,8 @@ import Register from '@/scenes/register'
 import InfoUser from '@/scenes/infoUser'
 import Teach from '@/scenes/teach'
 import UsersList from '@/scenes/userLlist'
+import StudentListen from '@/scenes/studentListen'
+
 function Home() {
   return (
     <h1>home</h1>
@@ -73,6 +75,12 @@ const attachRoutes = (user) => (
       currentUser={user}
       path={reformatUrl(routes.TEACH)}
       RouteComponent={Teach}
+    />
+
+    <PrivateRouter
+      currentUser={user}
+      path={`${reformatUrl(routes.STUDENT_LISTEN)}/:id`}
+      RouteComponent={StudentListen}
     />
 
     <Route

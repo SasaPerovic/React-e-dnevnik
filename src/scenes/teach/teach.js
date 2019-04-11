@@ -1,7 +1,8 @@
 /* eslint-disable */
 import PropTypes from 'prop-types'
 import React, { Component, Fragment } from 'react'
-
+import { Link } from 'react-router-dom'
+import routes from "@/const/router";
 
 class Teach extends Component {
   componentDidMount() {
@@ -19,6 +20,9 @@ class Teach extends Component {
             <li>{item.firstName}</li>
             <li>{item.lastName}</li>
             <li>{item.name}</li>
+            <li>
+              <Link to={`${routes.STUDENT_LISTEN}/${item.id}`}>Studenti</Link>
+            </li>
           </ul>
         </div>
       )

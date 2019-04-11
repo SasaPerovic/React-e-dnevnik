@@ -10,4 +10,5 @@ export const actionType = {
   LOGOUT_USER: 'LOGOUT',
   REGISTER_USER: 'REGISTER',
   GET_SUBJECT: 'SUBJECT',
+  GET_LISTEN: 'GET_LISTEN',
 }
