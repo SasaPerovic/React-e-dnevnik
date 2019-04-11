@@ -6,6 +6,8 @@ import { NavLink, Link } from 'react-router-dom'
 import router from '@/const/router'
 import { reformatUrl } from '@/utils/reformat'
 import Logo from '@/components/logo'
+import RoleView from '@/components/roleView'
+
 import './header.scss'
 
 class Header extends Component {
@@ -18,9 +20,22 @@ class Header extends Component {
           <nav className="main-nav">
             <NavLink to={reformatUrl(router.HOME)}>Home</NavLink>
             <NavLink display-if={!this.props.user} to={reformatUrl(router.LOGIN)}>Login</NavLink>
-            <NavLink to={reformatUrl(router.REGISTER)}>Register</NavLink>
+
+            <RoleView
+              role={['admin']}
+            >
+              <NavLink to={reformatUrl(router.REGISTER)}>Register</NavLink>
+            </RoleView>
+
             <NavLink to={reformatUrl(router.INFO_USER)}>Profile</NavLink>
+
             <NavLink to={reformatUrl(router.TEACH)}>Subject</NavLink>
+
+            <RoleView
+              role={['admin', 'teacher']}
+            >
+              <NavLink to={reformatUrl(router.TEACH)}>Subject</NavLink>
+            </RoleView>
             <NavLink to={reformatUrl(router.USERS_LIST)}>List</NavLink>
           </nav>
           <div>
