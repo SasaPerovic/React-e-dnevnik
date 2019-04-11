@@ -14,7 +14,7 @@ class Header extends Component {
     return (
       <header className="main-header">
         <div className="page-holder">
-          <Logo header />
+          <Logo />
           <nav className="main-nav">
             <NavLink to={reformatUrl(router.HOME)}>Home</NavLink>
             <NavLink display-if={!this.props.user} to={reformatUrl(router.LOGIN)}>Login</NavLink>
