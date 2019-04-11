@@ -1,13 +1,14 @@
-/* eslint-disable */
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 
 const initState = {
-  name: "",
-  email: "",
-  password: "",
-  password_confirmation: "",
-  role: "admin",
+  name: '',
+  email: '',
+  password: '',
+  password_confirmation: '',
+  role: 'admin',
+  firstName: '',
+  lastName: '',
 }
 
 class Register extends Component {
@@ -19,6 +20,7 @@ class Register extends Component {
       [name]: value,
     })
   }
+
   register = () => {
     const { registerUser } = this.props
     registerUser(this.state).then(() => {
@@ -29,18 +31,44 @@ class Register extends Component {
   }
 
   render() {
-    const { name, email, password, password_confirmation, role} = this.state
+    const {
+      name, email, password, password_confirmation, role, firstName, lastName,
+    } = this.state
+
     return (
       <section className="login-form">
         <div className="login-inner">
           <div className="form-item">
-            <label htmlFor="name">Name:</label>
+            <label htmlFor="name">User name:</label>
             <input
               value={name}
               id="name"
               type="text"
               name="name"
               placeholder="name"
+              onChange={this.onFieldChange}
+            />
+          </div>
+
+          <div className="form-item">
+            <label htmlFor="name">First name:</label>
+            <input
+              value={firstName}
+              id="firstName"
+              type="text"
+              name="firstName"
+              placeholder="First Name"
+              onChange={this.onFieldChange}
+            />
+          </div>
+          <div className="form-item">
+            <label htmlFor="name">Last name:</label>
+            <input
+              value={lastName}
+              id="lastName"
+              type="text"
+              name="lastName"
+              placeholder="Last name"
               onChange={this.onFieldChange}
             />
           </div>
