@@ -14,21 +14,21 @@ class Notification extends Component {
 
   createNotification = (notification) => {
     const { clearNotification } = this.props
-    const { type, message } = notification
+    const { type, message, title } = notification
 
     if (type) {
       switch (type) {
         case 'info':
-          NotificationManager.info(message)
+          NotificationManager.info(message, title)
           break
         case 'success':
-          NotificationManager.success(message)
+          NotificationManager.success(message, title)
           break
         case 'warning':
-          NotificationManager.warning(message)
+          NotificationManager.warning(message, title)
           break
         case 'error':
-          NotificationManager.error(message)
+          NotificationManager.error(message, title)
           break
         default:
           clearNotification()

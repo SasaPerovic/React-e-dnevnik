@@ -1,3 +1,9 @@
+/**
+ * @param variable
+ *   type: 'error, info, warning, success',
+ *   message: string,
+ * @returns {Function}
+ */
 export const showNotification = variable => (dispatch) => {
   dispatch({
     type: 'showNotification',
