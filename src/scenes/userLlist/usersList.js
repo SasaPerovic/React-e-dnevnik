@@ -9,21 +9,52 @@ class UsersList extends Component {
   }
   renderUsersList() {
     const { users } = this.props
-
-    return users.map((item, index) => {
       return (
-        <div className="list" key={index}>
-          <ul className="list-ul">
-            <li>{item.firstName}</li>
-            <li>{item.lastName}</li>
-            <li>{item.email}</li>
-            <li>{item.role}</li>
-            <li><button>Delite</button></li>
-            <li><button>Updata</button></li>
-          </ul>
+        <div className="styled-table">
+          <table className="styled">
+            <thead>
+              <tr>
+                <th>First name:</th>
+                <th>Last name:</th>
+                <th>E-mail:</th>
+                <th>Role:</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+            {
+              users.map(lista =>{
+                return(
+                  <tr key={lista.uid}>
+                    <td>
+                      {lista.firstName}
+                    </td>
+                    <td>
+                      {lista.lastName}
+                    </td>
+                    <td>
+                      {lista.email}
+                    </td>
+                    <td>
+                      {lista.role}
+                    </td>
+                    <td>
+                      <button>Delite</button>
+                    </td>
+                    <td>
+                      <button>Delite</button>
+                    </td>
+
+                  </tr>
+                )
+              })
+            }
+            </tbody>
+          </table>
         </div>
       )
-    })
+
   }
 
   render() {
