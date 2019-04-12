@@ -7,7 +7,6 @@ import router from '@/const/router'
 import { reformatUrl } from '@/utils/reformat'
 import Logo from '@/components/logo'
 import RoleView from '@/components/roleView'
-
 import './header.scss'
 
 class Header extends Component {

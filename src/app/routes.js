@@ -14,6 +14,7 @@ import InfoUser from '@/scenes/infoUser'
 import Teach from '@/scenes/teach'
 import UsersList from '@/scenes/userLlist'
 import StudentListen from '@/scenes/studentListen'
+import SubScor from '@/scenes/subjectScore'
 
 function Home() {
   return (
@@ -81,6 +82,11 @@ const attachRoutes = (user) => (
       currentUser={user}
       path={`${reformatUrl(routes.STUDENT_LISTEN)}/:id`}
       RouteComponent={StudentListen}
+    />
+    <PrivateRouter
+      currentUser={user}
+      path={`${reformatUrl(routes.SCORE)}/:id`}
+      RouteComponent={SubScor}
     />
 
     <Route

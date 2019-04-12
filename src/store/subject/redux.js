@@ -4,6 +4,7 @@ import { actionType } from '@/store/actionType'
 const initalState = {
   subject: [],
   listen: [],
+  score: null,
 }
 
 export default function reducer(state = initalState, action){

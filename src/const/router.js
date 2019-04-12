@@ -8,4 +8,5 @@ export default {
   TEACH: 'teach',
   STUDENT_LISTEN: 'studentslusa',
   USERS_LIST: 'users-list',
+  SCORE: 'score',
 }

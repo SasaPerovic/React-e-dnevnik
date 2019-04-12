@@ -1,6 +1,10 @@
 /* eslint-disable */
 import PropTypes from 'prop-types'
 import React, {Component, Fragment} from 'react'
+import { Link } from 'react-router-dom'
+import routes from '@/const/router';
+
+import { reformatUrl } from '@/utils/reformat'
 
 class StudentListen extends Component {
   constructor () {
@@ -17,7 +21,7 @@ class StudentListen extends Component {
 
   render() {
     const { listen } = this.props
-    return (
+      return (
       <table className="styled">
         <thead>
           <tr>
@@ -42,7 +46,7 @@ class StudentListen extends Component {
                   {student.predmet}
                 </td>
                 <td>
-                  details
+                  <Link to={reformatUrl(`${routes.SCORE}/${student.pohadjaId}`)}>Ocene</Link>
                 </td>
               </tr>
             )

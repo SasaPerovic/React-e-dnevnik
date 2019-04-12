@@ -11,5 +11,14 @@
   box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
   background-color: lightsteelblue;
   text-align: center;
-
+}
+.list-ul a {
+  text-decoration: none;
+  border:2px solid #3370bf;
+  border-radius: 5px;
+  color:white;
+  background-color:#3370bf;
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
 }
