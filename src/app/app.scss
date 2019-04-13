@@ -80,6 +80,14 @@ table.styled {
   text-align: center;
   border-collapse: collapse;
   margin: 0 auto;
+
+  &.ocene {
+    min-width: 520px;
+  }
+
+  .left-align {
+    text-align: left;
+  }
 }
 table.styled td, table.styled th {
   border: 1px solid #fff;

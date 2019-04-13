@@ -23,6 +23,19 @@ export default function reducer(state = initalState, action){
         listen: data,
       }
     }
+    case `${actionType.SCORE_GET}_FULFILLED`: {
+      const { data } = action.payload
+      return {
+        ...state,
+        score: data,
+      }
+    }
+    case `${actionType.SCORE_POST}`: {
+      return {
+        ...state,
+        score: action.payload,
+      }
+    }
     default: {
       return state
     }
