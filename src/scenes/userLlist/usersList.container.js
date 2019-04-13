@@ -1,7 +1,13 @@
 import { connect } from 'react-redux'
 
 import usersList from './usersList'
-import { getUsers } from '@/store/users/action'
+import {
+  getUsers,
+  removeUser,
+  editUser,
+} from '@/store/users/action'
+
+import { showNotification } from '@/store/notification/action'
 
 const mapStateToProps = (state) => {
   const { users } = state.store.users
@@ -12,6 +18,9 @@ const mapStateToProps = (state) => {
 
 const matchDispatchToProps = {
   getUsers,
+  removeUser,
+  editUser,
+  showNotification,
 }
 
 export default connect(mapStateToProps, matchDispatchToProps)(usersList)

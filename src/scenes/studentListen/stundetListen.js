@@ -33,9 +33,9 @@ class StudentListen extends Component {
         </thead>
         <tbody>
         {
-          listen.map(student => {
+          listen.map(student, index => {
             return (
-              <tr key={student.uid}>
+              <tr key={index}>
                 <td>
                   {student.firstName}
                 </td>

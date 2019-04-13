@@ -42,6 +42,18 @@ export default function reducer(state = initalState, action) {
         user: null,
       }
     }
+    case actionType.DELETE_USER: {
+      return {
+        ...state,
+        users: action.payload,
+      }
+    }
+    case actionType.UPDATE_USER: {
+      return {
+        ...state,
+        users: action.payload,
+      }
+    }
     default: {
       return state
     }

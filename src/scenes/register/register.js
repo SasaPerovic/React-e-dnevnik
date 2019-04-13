@@ -2,13 +2,13 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 
 const initState = {
-  name: '',
-  email: '',
-  password: '',
-  password_confirmation: '',
+  name: 'test',
+  email: 'test@test.test',
+  password: 'test12345',
+  password_confirmation: 'test12345',
   role: 'admin',
-  firstName: '',
-  lastName: '',
+  firstName: 'test',
+  lastName: 'test',
 }
 
 class Register extends Component {

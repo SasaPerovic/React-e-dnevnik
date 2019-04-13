@@ -13,20 +13,37 @@ import './app.scss'
 class App extends Component {
   constructor () {
     super()
+    this.state = {
+      loading: hasAuthCookie()
+    }
   }
 
   componentDidMount() {
     const { getUser } = this.props
+    const { loading } = this.state
+
     if (hasAuthCookie()) {
       // @TODO remove cookie on exeption
-      getUser()
+      getUser().then(() => {
+        if (loading) {
+          this.setState({
+            loading: false,
+          })
+        }
+      }).catch(() => {
+        if (loading) {
+          this.setState({
+            loading: false,
+          })
+        }
+      })
     }
   }
 
   render() {
     const { user } = this.props
     return (
-      <Fragment>
+      <Fragment display-if={!this.state.loading}>
         <section className="conteiner page">
           <Header
             className="header"

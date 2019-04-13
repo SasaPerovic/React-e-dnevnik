@@ -64,12 +64,13 @@ export const registerUser = variable => dispatch => new Promise((resolve, reject
   })
 })
 
-export const getUser = () => (dispatch) => {
-  dispatch({
+export function getUser() {
+  return {
     type: `${actionType.GET_USER}`,
     payload: apiGet('user'),
-  })
+  }
 }
+
 export const getUsers = () => (dispatch) => {
   dispatch({
     type: `${actionType.GET_USERS}`,
@@ -84,3 +85,48 @@ export const logOutUser = () => (dispatch) => {
     payload: [],
   })
 }
+
+export const removeUser = variables => (dispatch, state) => {
+  const { users } = state().store.users
+  const { id } = variables
+
+  apiGet(`user/delete/${id}`).then(() => {
+    const mutableUsers = users.filter(item => item.id !== id)
+    dispatch({
+      type: actionType.DELETE_USER,
+      payload: mutableUsers,
+    })
+  })
+}
+
+/* eslint-disable */
+export const editUser = variables => (dispatch, state) => new Promise((resolve, reject) => {
+  const { users } = state().store.users
+
+  apiPost('user/update', variables).then((data) => {
+    const mutableUsers = [...users]
+    const index = mutableUsers.findIndex(el => el.id === variables.id)
+
+    const {
+      email, role, firstName, lastName, id,
+    } = data.data.user
+
+    const newUser = {
+      email,
+      role,
+      firstName,
+      lastName,
+      id,
+    }
+    mutableUsers[index] = newUser
+
+    resolve(newUser)
+
+    dispatch({
+      type: actionType.UPDATE_USER,
+      payload: mutableUsers,
+    })
+  }).catch((error) => {
+    reject(error.response)
+  })
+})
